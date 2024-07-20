@@ -1,0 +1,16 @@
+name = 'augo'
+license = 'MIT'
+licenselink = 'https://github.com/antonsakhanovych/augo/LICENSE'
+description = "Anton's hugo theme"
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/antonsakhanovych/augo'
+
+# Taxonomy terms
+tags = ['blog', 'simple']
+features = ['simple']
+
+# If the theme has a single author
+[author]
+  name = 'Anton Sakhanovych'
+  homepage = ''
