@@ -1,3 +1,7 @@
 {{ define "main" }}
+{{ with resources.Get "images/me-photo.jpg" }}
+<img class="me-photo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+{{ end }}
+
 {{ .Content }}
 {{ end }}

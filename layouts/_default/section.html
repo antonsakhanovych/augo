@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ .Content }}
+
+{{ $pages := where site.RegularPages "Type" .Section }}
+{{ $paginator := .Paginate $pages }}
+
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+<h1>{{ .Title }}</h1>
+<ul>
+    {{ range $paginator.Pages }}
+    <li class="page-item">
+        <a class="page-title" href="{{ .RelPermalink }}">&#187; {{ .LinkTitle }}</a>
+        <span class="page-description">{{ .Description }}</span>
+        <time class="page-time" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </li>
+    {{ end }}
+</ul>
+
+{{ partial "pagination.html" . }}
+{{ end }}
