@@ -1,0 +1,69 @@
+.page-item {
+  margin-bottom: 2rem;
+  display: flex;
+}
+.page-title,
+.page-time {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.page-time {
+  font-style: italic;
+}
+
+.page-description {
+  flex-grow: 1;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.social {
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.social-icon {
+  width: 50px;
+  height: auto;
+}
+
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.taxonomy-item a,
+.taxonomy-item a:visited {
+  color: var(--green);
+}
+
+.taxonomy-item {
+  margin: 0.5em 0.5em 0 0;
+  cursor: pointer;
+  --c: var(--aqua); /* the border color */
+  --b: 2px; /* the border thickness*/
+  --g: 0.25em; /* the gap on hover */
+  border-radius: 5px;
+
+  padding: calc(var(--g) + var(--b));
+  --_g: #0000 25%, var(--c) 0;
+  background:
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g))
+      var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+    conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
+      var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+  background-color: var(--bg_h);
+  transition:
+    0.3s,
+    background-position 0.3s 0.3s;
+  cursor: pointer;
+}
+
+.taxonomy-item:hover {
+  --_i: 100%;
+  transition:
+    0.3s,
+    background-size 0.3s 0.3s;
+}

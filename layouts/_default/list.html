@@ -2,12 +2,13 @@
 <div class="content">
     <h1 class="title">{{ .Title }}</h1>
     {{ .Content }}
-    {{ range .Pages }}
-    <ul>
-        <li>
+
+    <ul class="taxonomy-list">
+        {{ range .Pages }}
+        <li class="taxonomy-item">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
+        {{ end }}
     </ul>
-    {{ end }}
 </div>
 {{ end }}

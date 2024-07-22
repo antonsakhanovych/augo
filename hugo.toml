@@ -32,7 +32,7 @@ tag = "tags"
 
 [pagination]
   disableAliases = false
-  pagerSize = 2
+  pagerSize = 10 
   path = 'page'
 
 
