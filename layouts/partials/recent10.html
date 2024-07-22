@@ -1,0 +1,18 @@
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format ":date_long" }}
+{{ $pages := where .Site.RegularPages "Section" "post" | first 10 }}
+{{ if ge (len $pages) 1 }}
+<h4>Recent posts</h4>
+<ul>
+    {{ range $pages }}
+    {{ $link := .RelPermalink }}
+    {{ $title := .LinkTitle }}
+    {{ $description := .Description }}
+    {{ $shortcode := (printf "{{< post link=%q title=%q description=%q dateHuman=%q dateMachine=%q>}}" $link $title
+        $description $dateHuman $dateMachine)
+        | markdownify }}
+        {{ $shortcode }}
+        {{ end }}
+</ul>
+<p><a href="post">See all posts ➜ </a></p>
+{{ end }}

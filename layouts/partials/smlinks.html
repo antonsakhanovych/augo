@@ -1,0 +1,14 @@
+<h4>Socials</h4>
+<div class="social">
+    <a href="{{ .Site.Params.linkedin}}">
+        {{ with resources.Get "icons/linkedin-icon.png" }}
+        <img class="social-icon" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+        {{ end }}
+    </a>
+
+    <a href="{{ .Site.Params.github}}">
+        {{ with resources.Get "icons/github-icon.png" }}
+        <img class="social-icon" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+        {{ end }}
+    </a>
+</div>
